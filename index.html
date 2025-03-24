@@ -6,6 +6,21 @@
     <title>CyberNest | Cybersecurity Solutions</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
+
+    <!-- Security Headers and Anti-Copy Script -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://formsubmit.co;">
+    <meta name="referrer" content="no-referrer">
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('selectstart', event => event.preventDefault());
+        document.onkeydown = function(e) {
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'a')) {
+                return false;
+            }
+        };
+    </script>
 </head>
 <body>
     <header>
@@ -72,6 +87,9 @@
             designed to adapt to emerging cyber threats.</p>
 
             <p>Join us in building a safer digital world. Protect your business today with CyberNest's trusted expertise.</p>
+
+            <p>CyberNest aligns its cybersecurity practices with international frameworks such as ISO/IEC 27001, NIST Cybersecurity Framework, and GDPR. 
+            We also adhere to the principles set out by POPIA to ensure the ethical handling of personal data in South Africa.</p>
         </div>
     </section>
 
@@ -79,11 +97,12 @@
         <h2>Contact Us</h2>
         <div class="contact-container">
             <div class="contact-info">
-                <p><strong>Email:</strong> info@cyber-nest.com</p>
+                <p><strong>Email:</strong> info@cyber-nest.co.za</p>
                 <p><strong>Phone:</strong>TBC</p>
                 <p><strong>Location:</strong> Johannesburg</p>
             </div>
-            <form>
+            <form action="https://formsubmit.co/info@cyber-nest.co.za" method="POST">
+                <input type="hidden" name="_next" value="https://your-website-url.com/thank-you.html">
                 <input type="text" id="name" name="name" placeholder="Your Name" required>
                 <input type="email" id="email" name="email" placeholder="Your Email" required>
                 <textarea id="message" name="message" placeholder="Your Message" required></textarea>
@@ -95,6 +114,10 @@
     <footer>
         <p>&copy; 2025 CyberNest. All rights reserved.</p>
         <a href="#home" class="back-to-top">↑ Back to Top</a>
+        <p style="font-size: 0.9em; margin-top: 10px;">
+            <strong>Disclaimer:</strong> CyberNest is committed to protecting your personal information in accordance with the Protection of Personal Information Act (POPIA). 
+            By submitting your information through this website, you consent to its use for business communication purposes. Your data will be securely stored and will not be shared without consent.
+        </p>
     </footer>
 </body>
 </html>
